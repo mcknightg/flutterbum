@@ -1,0 +1,41 @@
+<template name="projectView">
+  <div id="example" class="panel">
+    <ol class="breadcrumb">
+      <li><a href="/"><i class="fa fa-home"></i> Home</a></li>
+      <li><a href="/dashboard"><i class="fa fa-cubes"></i> Projects</a></li>
+      <li class="active">{{name}}</li>
+    </ol>
+    {{#if editing_calevent}}
+      {{>caltask}}
+    {{/if}}
+    {{#if adding_conversation}}
+      {{>conversationDlg}}
+    {{/if}}
+    {{#if adding_todo}}
+      {{>todoDlg}}
+    {{/if}}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Project Detail</h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-3">
+            {{>activity}}
+            {{>uploads}}
+          </div>
+          <div class="col-md-9">
+            {{>calendar}}
+            {{>conversations}}
+            <div class="col-md-8">
+              {{>todos}}
+            </div>
+            <div class="col-md-4">
+              {{>invited}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,33 @@
+<template name="conversations">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Conversation List</h3>
+    </div>
+    <div class="panel-body">
+      <div class="col-md-12">
+          <h5 class="text-muted">
+            <a href="#" class="addConversation"> Start a Conversation.</a>
+          </h5>
+          <hr>
+          <table>
+            {{#each conversations}}
+              {{>conversation}}
+            {{/each}}
+          </table>
+      </div>
+    </div>
+  </div>
+</template>
+<template name="conversation">
+  <tr>
+    <td class="col-md-1"><i class="fa fa-folder"></i></td>
+    <td class="col-md-2">{{username}}</td>
+    <td class="col-md-5"><a href="#" class="shorten">{{note}}</a></td>
+    <td class="col-md-2">{{formatdate dateadded}}</td>
+    <td class="col-md-1"><button type="button" class="btn btn-default">
+      <i class="fa fa-minus-square-o archiveConversation"></i> Archive
+    </button>
+  </td>
+  <td colspan="5"><hr></td>
+  </tr>
+</template>

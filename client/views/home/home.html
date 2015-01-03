@@ -1,0 +1,61 @@
+<template name="home">
+  <div class="home">
+    <div class="container">
+      <div class="jumbotron">
+          <!--The site title is pulled from our seo.js-->
+        <h1>{{ siteTitle }}</h1>
+
+        <p class="lead">Project Management for the real world.</p>
+        <p>
+            <!--pathFor asks Iron Router to fill the url in, in case it changes-->
+          <a href="{{pathFor 'dashboard'}}" class="btn btn-lg btn-success">My Projects</a>
+        </p>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+            <!--The fa-users class indicates a font awesome icon-->
+          <h2><i class="fa fa-users"></i> Team Building</h2>
+          <p>
+              Invite your project team to collaborate on your project.
+              They will automatically see your project once they've been invited.
+          </p>
+        </div>
+        <div class="col-lg-4">
+          <h2><i class="fa fa-twitch"></i> Store Conversations</h2>
+          <p>
+            Any comments or remarks made on a specific project will be stored with the project.
+          </p>
+        </div>
+        <div class="col-lg-4">
+          <h2><i class="fa fa-inbox"></i> Store Todo Lists</h2>
+          <p>
+            Each project can maintain it's own to do list, so everyone knows what has already been done.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+          <h2><i class="fa fa-upload"></i> Upload Files</h2>
+          <p>
+            Invite your users to Upload Files.
+          </p>
+
+        </div>
+        <div class="col-lg-4">
+          <h2><i class="fa fa-comments-o"></i> Live Chat</h2>
+          <p>
+            You can chat with anyone on line to bounce ideas off your colleagues
+          </p>
+
+        </div>
+        <div class="col-lg-4">
+          <h2><i class="fa fa-download"></i> Download Files</h2>
+          <p>
+            Any files which were uploaded to a project, can be downloaded from that location.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,25 @@
+<template name="activity">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Project Activity in <span> Ascending </span> order.</h3>
+    </div>
+    <div class="panel-body">
+      <ul class="list-group">
+        {{#each calevents}}
+          {{>calevent}}
+        {{else}}
+        <h5>No Activity Found !</h5>
+        {{/each}}
+      </ul>
+    </div>
+
+  </div>
+
+</template>
+<template name="calevent">
+  <li class="list-group-item">
+    <a href="#" class="activityEvent">{{formatdate start}}</a>
+    <span class="badge">Type</span>
+    <div class="alert alert-success">{{title}}</div>
+  </li>
+</template>

@@ -1,0 +1,19 @@
+<template name="todoDlg">
+  <div class="modal fade in show" id="toDoDlg" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close closeTodo" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="">New Todo</h4>
+        </div>
+        <div class="modal-body">
+          <textarea placeholder="Add a To Do List Item" class="form-control todoitem noborder"></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default closeTodo" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary saveTodo">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

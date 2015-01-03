@@ -1,0 +1,31 @@
+<template name="uploads">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Uploads</h3>
+    </div>
+    <div class="panel-body">
+      Add Files &nbsp;
+      <span class="btn btn-default btn-file">Browse <input type="file" name="myFileInput" class="myFileInput"></span>
+      <div class="fileTable">
+        <table class="table table-hover table-striped table-responsive">
+          <thead>
+            <th>File Name</th>
+            <th></th>
+          </thead>
+          <tbody>
+          {{#each uploads}}
+            {{>upload}}
+          {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</template>
+<template name="upload">
+  <tr>
+    <td class="col-md-10">{{name}}</td>
+    <td><a target="_blank" href="{{url download=true}}" class="btn btn-primary"><i class="fa fa-download"></i></a></td>
+  </tr>
+</template>

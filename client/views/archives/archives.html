@@ -1,0 +1,29 @@
+<template name="archives">
+  <div class="panel panel-default">
+    <div class="page-header">
+      <h1>&nbsp; Archive <small>List</small></h1>
+    </div>
+    <div class="panel-body">
+      <table class="table table-bordered table-striped table-condensed">
+        <thead>
+          <th>Type: </th>
+          <th>Date: </th>
+          <th>Content: </th>
+          <th>UnArchive: </th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Conversation</td>
+            <td>Date Added</td>
+            <td>Note</td>
+            <td>
+              <button name="button" class="btn btn-default btn-xs unArchiveConversation">
+                <i class="fa fa-minus-square-o"></i> UnArchive
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</template>

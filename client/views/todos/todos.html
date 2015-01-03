@@ -1,0 +1,25 @@
+<template name="todos">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">To Do List</h3>
+      <p>
+        <a href="#" class="addtodo"> Add a To Do</a>
+      </p>
+    </div>
+    <div class="panel-body">
+      <table class="table table-bordered table-hover table-striped">
+        {{#each todos}}
+          {{>todo}}
+        {{/each}}
+      </table>
+    </div>
+  </div>
+</template>
+<template name="todo">
+  <tr>
+    <td class="col-md-1"><input type="checkbox" name="todochecked" class="todochecked" checked="{{completed}}"/></td>
+    <td class="col-md-5 complete{{completed}}"><a href="#">{{note}}</a></td>
+    <td class="col-md-2 complete{{completed}}">{{formatdate dateadded}}</td>
+    <td class="col-md-1"><button class="btn btn-default btn-xs archive" name="archive"><i class="fa fa-minus-square-o"></i> Archive</button></td>
+  </tr>
+</template>

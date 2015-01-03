@@ -1,0 +1,25 @@
+<template name="invited">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Invited</h3>
+    </div>
+    <div class="panel-body">
+        <select  name="userToInvite" id="userToInvite">
+          {{#each userList}}
+            <option value="{{_id}}">{{profile.firstName}} {{profile.lastName}}</option>
+          {{/each}}
+        </select>
+        <i class="fa fa-plus inviteUser"></i>
+        <hr/>
+        <table class="table table-hover table-striped">
+          {{#each invited}}
+          <tr><td width="250px">{{profile.firstName}} {{profile.lastName}}</td>
+            <td>{{#if isowner ..}} <i class="fa fa-trash removeUser"></i>{{/if}}</td>
+          </tr>
+          {{/each}}
+        </table>
+
+    </div>
+
+  </div>
+</template>
