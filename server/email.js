@@ -36,6 +36,23 @@ Meteor.startup(function() {
     'removeProject':function(id){
       return Projects.remove({_id:id});
     },
+    'updateProjectName': function (id, name) {
+      return Projects.update({_id: id}, {$set: {name: name}});
+    },
+    'updateProjectCustomer': function (project, id) {
+      return Projects.update({_id: project}, {
+        $set: {
+          customer: id
+        }
+      });
+    },
+    'updateProjectDate': function (project, date) {
+      return Projects.update({_id: project}, {
+        $set: {
+          datedue: date
+        }
+      });
+    },
     'addCustomer': function (name) {
       return Customers.insert({name: name});
     },

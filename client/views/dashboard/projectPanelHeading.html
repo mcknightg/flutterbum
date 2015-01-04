@@ -1,0 +1,33 @@
+<template name="projectPanelHeading">
+  <div class="panel-heading">
+    <h2 class="panel-title">
+      <span id="projectName">
+        {{#if editing_projectname}}
+        <input style="width:150px;margin-left:20px;font-size:10pt;" type="text"
+        class="noborder form-control projectName" id="projectName"
+        placeholder="Name" value="{{name}}">
+        {{else}}
+        <span><a class="projectNameEdit" href="#">{{name}}</a></span>
+        {{/if}}
+        for
+      </span>
+      {{#if editing_projectcustomer}}
+      <select style="width:190px" class="form-control customer input" name="customer" id="customer">
+        <option value="">Select A Customer</option>
+        {{#each customers}}
+        <option selected="{{isSelected ..}}" value="{{_id}}">{{name}}</option>
+        {{/each}}
+      </select>
+      {{else}}
+      <span><a class="projectCustomerEdit" href="#">{{customer.name}}</a></span>
+      {{/if}}
+      {{#if editing_datedue}}
+      <input style="width:150px;margin-left:20px;font-size:10pt;" type="text"
+      class="noborder form-control dateDue" id="dateDue"
+      placeholder="Date Due" value="{{datedue}}">
+      {{else}}
+      <span> Due on <a class="projectDateDue" href="#">{{formatdate datedue}}</a></span>
+      {{/if}}
+    </h2>
+  </div>
+</template>
