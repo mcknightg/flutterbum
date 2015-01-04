@@ -34,6 +34,9 @@ Meteor.publish('uploads',function(project){
 Meteor.publish('directory',function(){
   return Meteor.users.find({},{});
 });
+Meteor.publish('chats',function(){
+  return Chats.find({},{});
+});
 Meteor.publish(null,function(){
   return Meteor.roles.find({});
 })

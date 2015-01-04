@@ -43,6 +43,7 @@ Router.map(function() {
     loginRequired: 'entrySignIn',
     waitOn:function(){
       Meteor.subscribe('customers');
+      Meteor.subscribe('chats');
       return Meteor.subscribe('projects',Meteor.userId());
     },
     data:{

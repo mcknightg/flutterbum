@@ -107,6 +107,12 @@ Meteor.startup(function() {
     'completeTodo':function(id,complete){
       Todos.update({_id:id},{$set:{completed:complete}});
     },
+    addChat: function (chat) {
+      return Chats.insert(chat);
+    },
+    removeChats: function () {
+      return Chats.remove({});
+    },
     'addTodo':function(todo){
       todo.userId = Meteor.userId();
       todo.dateadded = new Date();
