@@ -12,16 +12,36 @@
           <th>UnArchive: </th>
         </thead>
         <tbody>
+          {{#each conversations}}
           <tr>
             <td>Conversation</td>
-            <td>Date Added</td>
-            <td>Note</td>
-            <td>
-              <button name="button" class="btn btn-default btn-xs unArchiveConversation">
-                <i class="fa fa-minus-square-o"></i> UnArchive
-              </button>
+            <td>{{formatdate dateadded}}</td>
+            <td>{{summarize note}}</td>
+            <td><button class="btn btn-default btn-xs unarchiveConversation">
+              <i class="fa fa-minus-square-o"></i> UnArchive</button>
             </td>
           </tr>
+          {{/each}}
+          {{#each todos}}
+          <tr>
+            <td>To Do Item</td>
+            <td>{{formatdate dateadded}}</td>
+            <td>{{summarize note}}</td>
+            <td><button class="btn btn-default btn-xs unarchiveTodo">
+              <i class="fa fa-minus-square-o"></i> UnArchive</button>
+            </td>
+          </tr>
+          {{/each}}
+          {{#each projects}}
+          <tr>
+            <td>Project</td>
+            <td>{{formatdate dateentered}}</td>
+            <td>{{summarize note}}</td>
+            <td><button class="btn btn-default btn-xs unarchiveProject">
+              <i class="fa fa-minus-square-o"></i> UnArchive</button>
+            </td>
+          </tr>
+          {{/each}}
         </tbody>
       </table>
     </div>

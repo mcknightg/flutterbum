@@ -19,6 +19,10 @@ Template.dashboard.events({
 Template.dashboard.helpers({
   projectToDelete:function(){
     return Session.get('projectToDelete');
+  },
+  customer: function (customer) {
+    var cust = Customers.findOne({_id: this.customer});
+    return cust;
   }
 })
 Template.delconfirm.events({

@@ -36,6 +36,21 @@ Meteor.startup(function() {
     'removeProject':function(id){
       return Projects.remove({_id:id});
     },
+    'addCustomer': function (name) {
+      return Customers.insert({name: name});
+    },
+    'updateCustomerName': function (id, name) {
+      return Customers.update({_id: id}, {$set: {name: name}});
+    },
+    'updateCustomerPhone': function (id, phone) {
+      return Customers.update({_id: id}, {$set: {phone: phone}});
+    },
+    'updateCustomerContact': function (id, contact) {
+      return Customers.update({_id: id}, {$set: {contact: contact}});
+    },
+    'removeCustomer': function (id) {
+      return Customers.remove({_id: id});
+    },
     'addCalEvent': function (calevent) {
       if (!calevent.type) {
         calevent.type = 'milestone';

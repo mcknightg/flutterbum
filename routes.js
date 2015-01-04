@@ -23,8 +23,12 @@ Router.map(function() {
     }
   });
   this.route('archives', {
+    layoutTemplate: 'mainLayout',
     path: '/archives',
-    layoutTemplate:'mainLayout'
+    waitOn: function () {
+      Meteor.subscribe('archives', Session.get('active_project'));
+
+    }
   });
   this.route('roles', {
     path: '/roles',
