@@ -29,7 +29,7 @@
 </template>
 <template name="role">
   <tr>
-    <td>{{profile.firstName}} {{profile.lastName}}</td>
+    <td>{{#if profile.firstName}}{{profile.firstName}} {{profile.lastName}} {{else}} {{username}}{{/if}}</td>
     <td><input type="checkbox" name="viewprojects" value=""></td>
     <td><input type="checkbox" name="editprojects" value=""></td>
     <td><input type="checkbox" name="viewcustomers" value=""></td>
