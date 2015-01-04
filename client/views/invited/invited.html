@@ -6,14 +6,14 @@
     <div class="panel-body">
         <select  name="userToInvite" id="userToInvite">
           {{#each userList}}
-            <option value="{{_id}}">{{profile.firstName}} {{profile.lastName}}</option>
+            <option value="{{_id}}">{{#if profile.firstName}} {{profile.firstName}} {{profile.lastName}}{{else}}{{username}}{{/if}}</option>
           {{/each}}
         </select>
         <i class="fa fa-plus inviteUser"></i>
         <hr/>
         <table class="table table-hover table-striped">
           {{#each invited}}
-          <tr><td width="250px">{{#if profile.firstName}}{{profile.firstName}} {{profile.lastName}}{{else}}{{username}}{{/if}}</td>
+          <tr><td width="250px">{{#if profile.firstName}} {{profile.firstName}} {{profile.lastName}}{{else}}{{username}}{{/if}}</td>
             <td>{{#if isowner ..}} <i class="fa fa-trash removeUser"></i>{{/if}}</td>
           </tr>
           {{/each}}

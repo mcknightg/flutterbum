@@ -19,7 +19,7 @@
         {{/each}}
       </select>
       {{else}}
-      <span><a class="projectCustomerEdit" href="#">{{customer.name}}</a></span>
+      <span><a class="projectCustomerEdit" href="#">{{#if customer.name}}{{customer.name}}{{else}}'none selected'{{/if}}</a></span>
       {{/if}}
       {{#if editing_datedue}}
       <input style="width:150px;margin-left:20px;font-size:10pt;" type="text"
