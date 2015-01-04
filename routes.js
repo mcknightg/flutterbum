@@ -2,7 +2,7 @@ Router.map(function() {
 
   this.route('home', {
     path: '/',
-    layoutTemplate:''
+    layoutTemplate:'nosidebar'
   });
   this.route('customers', {
     path: '/customers',
