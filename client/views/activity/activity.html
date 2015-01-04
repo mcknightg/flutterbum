@@ -20,6 +20,6 @@
   <li class="list-group-item">
     <a href="#" class="activityEvent">{{formatdate start}}</a>
     <span class="badge">Type</span>
-    <div class="alert alert-success">{{title}}</div>
+    <div class="alert alert-success">{{#if title}}{{title}}{{else}}{{name}}{{/if}}</div>
   </li>
 </template>

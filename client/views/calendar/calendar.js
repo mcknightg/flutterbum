@@ -79,3 +79,14 @@ Template.caltask.events({
     Session.set('editing_calevent',null);
   }
 })
+Template.caltask.helpers({
+  editing_calevent: function () {
+    return Session.get('editing_calevent');
+  },
+  evttype_milestone: function () {
+    return Session.equals('eventttype', 'milestone');
+  },
+  evttype_hoursworked: function () {
+    return Session.equals('eventttype', 'hoursworked');
+  }
+});

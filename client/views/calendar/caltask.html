@@ -15,14 +15,20 @@
               <option value="hoursworked">Log Time Worked</option>
             </select>
           </div>
+          {{#if evttype_milestone}}
           <div class="form-group">
-            <label for="name">Milestone Description</label>
-            <input placeholder="Enter Milestone Description" type="text" class="form-control name" id="">
+            <label class="label label-default">Milestone Description</label>
+            <input type="text" class=" form-control name focus" id="name"
+            placeholder="Enter Milestone Description" value=""><br/>
           </div>
+          {{/if}}
+          {{#if evttype_hoursworked}}
           <div class="form-group">
-            <label for="name">Number of Hours</label>
-            <input type="number" class="form-control name focus input-md-2" id="" placeholder="Hours Worked">
+            <label class="label label-default">Number of Hours</label>
+            <input type="number" class=" form-control name focus" id="name" placeholder="Enter Hours Worked"
+            value=""><br/>
           </div>
+          {{/if}}
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger deleteCalTask" data-dismiss="modal">Remove</button>
