@@ -6,11 +6,7 @@ Template.chats.helpers({
     var flitList = Chats.find({},{sort:{date:-1},limit:20}).fetch();
     var flitArray = [];
     for(var i = 0;i < flitList.length;i++){
-      if(flitList[i].owner){
-        var user = Meteor.users.findOne({_id:flitList[i].owner}, {});
 
-        flitList[i].ownerName = user.username;
-      }
       flitArray.push(flitList[i]);
     }
     return flitList.reverse();

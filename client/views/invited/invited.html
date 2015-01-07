@@ -6,7 +6,9 @@
     <div class="panel-body">
         <select  name="userToInvite" id="userToInvite">
           {{#each userList}}
-            <option value="{{_id}}">{{#if profile.firstName}} {{profile.firstName}} {{profile.lastName}}{{else}}{{username}}{{/if}}</option>
+          {{#if profile.firstName}}
+            <option value="{{_id}}">{{profile.firstName}} {{profile.lastName}}</option>
+            {{/if}}
           {{/each}}
         </select>
         <i class="fa fa-plus inviteUser"></i>

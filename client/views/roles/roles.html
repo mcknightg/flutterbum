@@ -1,7 +1,7 @@
 <template name="roles">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="panel-title">Role Management</h3>
+      <h3 class="panel-title">Role Management (User must have profile)</h3>
     </div>
     <div class="panel-body">
       <table class="table table-bordered table-hover table-striped">
@@ -16,7 +16,9 @@
         </thead>
         <tbody>
           {{#each userList}}
+          {{#if profile.firstName}}
             {{>role}}
+            {{/if}}
           {{/each}}
         </tbody>
 
@@ -30,10 +32,10 @@
 <template name="role">
   <tr>
     <td>{{#if profile.firstName}}{{profile.firstName}} {{profile.lastName}} {{else}} {{username}}{{/if}}</td>
-    <td><input type="checkbox" name="viewprojects" value=""></td>
-    <td><input type="checkbox" name="editprojects" value=""></td>
-    <td><input type="checkbox" name="viewcustomers" value=""></td>
-    <td><input type="checkbox" name="editcustomers" value=""></td>
+    <td><input checked="{{checkRole _id 'view-projects'}}" type="checkbox" id="viewprojects" value=""></td>
+    <td><input checked="{{checkRole _id 'edit-projects'}}"  type="checkbox" id="editprojects" value=""></td>
+    <td><input checked="{{checkRole _id 'view-customers'}}"  type="checkbox" id="viewcustomers" value=""></td>
+    <td><input checked="{{checkRole _id 'edit-customers'}}"  type="checkbox" id="editcustomers" value=""></td>
   </tr>
 
 </template>

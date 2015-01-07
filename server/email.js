@@ -1,5 +1,21 @@
 Meteor.startup(function() {
+  if (Meteor.users.find().fetch().length === 0) {
+    var users = [
+  {name:"Customer Service",email:"cs@home.com",roles:['view-projects','view-customers']},
+{name:"Admin User",email:"geomck1967@gmail.com",roles:['admin']}
+];
 
+_.each(users, function (userData) {
+  var id = Accounts.createUser({
+    email: userData.email,
+    password: "apple1",
+    username:userData.email,
+    profile: { name: userData.name }
+  });
+  Meteor.users.update({_id: id}, {$set:{'emails.0.verified': true}});
+  Roles.addUsersToRoles(id, userData.roles);
+});
+}
   Meteor.Mailgun.config({
     username: 'postmaster@domain.com',
     password: 'password-goes-here'
@@ -20,6 +36,7 @@ Meteor.startup(function() {
       });
     },
     'saveProject':function(project){
+
       check(project.name,String);
       project.userId = Meteor.userId();
       project.dateentered = new Date();
@@ -34,9 +51,11 @@ Meteor.startup(function() {
       return Projects.insert(project);
     },
     'removeProject':function(id){
+
       return Projects.remove({_id:id});
     },
     'updateProjectName': function (id, name) {
+    
       return Projects.update({_id: id}, {$set: {name: name}});
     },
     'updateProjectCustomer': function (project, id) {
@@ -135,6 +154,18 @@ Meteor.startup(function() {
         throw new Meteor.Error(404,"No Such Project !");
       }
       Projects.update(projectid,{$pull:{invited:userId}});
+    },
+    addToRole:function(user,role){
+      var loggedInUser = Meteor.user();
+      if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
+            throw new Meteor.Error(403, "Access denied")
+          }
+        var rolesarray = Roles.getRolesForUser(user);
+        rolesarray.push(role);
+        Roles.addUsersToRoles(user,rolesarray);
+    },
+    removeFromRole:function(user,role){
+
     }
   });
 });
