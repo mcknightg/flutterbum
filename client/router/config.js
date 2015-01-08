@@ -1,5 +1,5 @@
 Router.configure({
-  layoutTemplate: '',
+  layoutTemplate: 'nosidebar',
   loadingTemplate: 'loading',
 
   yieldTemplates: {

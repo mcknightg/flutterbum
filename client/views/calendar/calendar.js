@@ -73,10 +73,13 @@ Template.caltask.events({
       calevent.title = name;
       calevent.type = type;
       calevent.project = Session.get('active_project');
-      console.log(calevent);
       Meteor.call('updateCalEvent',calevent);
     }
     Session.set('editing_calevent',null);
+  },
+  'change .taskTitle':function(evt,tmpl){
+    var typeselected = evt.target.value;
+    Session.set('eventttype', typeselected);
   }
 })
 Template.caltask.helpers({
@@ -84,9 +87,11 @@ Template.caltask.helpers({
     return Session.get('editing_calevent');
   },
   evttype_milestone: function () {
+    console.log('evttypemilestone',Session.equals('eventttype', 'milestone'));
     return Session.equals('eventttype', 'milestone');
   },
   evttype_hoursworked: function () {
+    console.log('evttypehoursworked',Session.equals('eventttype', 'hoursworked'));
     return Session.equals('eventttype', 'hoursworked');
   }
 });
