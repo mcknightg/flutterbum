@@ -1,5 +1,5 @@
 Uploads = new FS.Collection('uploads',
-{stores:[new FS.Store.FileSystem('uploads',{path:'/meteor_uploads'})]
+{stores:[new FS.Store.FileSystem('uploads',{path:'~/meteor_uploads'})]
 });
 Uploads.allow({
   insert:function(){
