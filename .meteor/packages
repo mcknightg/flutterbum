@@ -25,6 +25,6 @@ fuatsengul:iron-router-auth
 dburles:factory
 anti:fake
 cunneen:mailgun
-cfs:filesystem
 cfs:standard-packages
 mrt:fullcalendar
+cfs:filesystem

@@ -55,7 +55,7 @@ _.each(users, function (userData) {
       return Projects.remove({_id:id});
     },
     'updateProjectName': function (id, name) {
-    
+
       return Projects.update({_id: id}, {$set: {name: name}});
     },
     'updateProjectCustomer': function (project, id) {

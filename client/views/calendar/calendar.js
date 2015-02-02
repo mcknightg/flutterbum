@@ -50,7 +50,7 @@ Template.calendar.rendered = function(){
     weekMode:'liquid'
   }).data().fullCalendar;
   Deps.autorun(function(){
-    Calevents.find({project:Session.get('active_project')}).fetch();
+    Calevents.find({}).fetch();
     if(calendar){
       calendar.refetchEvents();
     }

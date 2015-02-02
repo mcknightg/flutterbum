@@ -19,22 +19,25 @@ Template.chats.rendered = function(){
 Template.chats.events({
   'keyup .flitEdit':function(evt,tmpl){
     if (event.which === 27 || event.which === 13) {
-      event.preventDefault();
-      var ele =  tmpl.find('.flitEdit');
-      if(ele.value !== ''){
-        Meteor.call('addChat',{date:new Date,owner:Meteor.userId(),note:ele.value});
-        ele.value = '';
-        ele.focus();
-        scrollToBottom();
-      }
-
+      sendChat(tmpl);
     }
   },
   'click .clearChat':function(){
     return Meteor.call('removeChats');
-
+  },
+  'click .saveChat':function(evt,tmpl){
+    sendChat(tmpl);
   }
 });
+function sendChat(tmpl){
+  var ele =  tmpl.find('.flitEdit');
+  if(ele.value !== ''){
+    Meteor.call('addChat',{date:new Date,owner:Meteor.userId(),note:ele.value});
+    ele.value = '';
+    ele.focus();
+    scrollToBottom();
+  }
+}
 function scrollToBottom(){
   $('.notes').scrollTop($('.notes')[0].scrollHeight);
 }
