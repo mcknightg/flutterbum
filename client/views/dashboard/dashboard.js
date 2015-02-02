@@ -14,6 +14,9 @@ Template.dashboard.events({
     evt.preventDefault();
     evt.stopPropagation();
     Session.set('projectToDelete',this._id);
+  },
+  'click .cancelDelete':function(){
+    return Session.set('projectToDelete',null);
   }
 });
 Template.dashboard.helpers({
