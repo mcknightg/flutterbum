@@ -157,15 +157,13 @@ _.each(users, function (userData) {
     },
     addToRole:function(user,role){
       var loggedInUser = Meteor.user();
-      if (!loggedInUser || !Roles.userIsInRole(loggedInUser, ['admin'])) {
+      if (!loggedInUser && !Roles.userIsInRole(loggedInUser, ['admin'])) {
             throw new Meteor.Error(403, "Access denied")
           }
-        var rolesarray = Roles.getRolesForUser(user);
-        rolesarray.push(role);
-        Roles.addUsersToRoles(user,rolesarray);
+        Roles.addUsersToRoles(user,role);
     },
     removeFromRole:function(user,role){
-
+        Roles.removeUsersFromRoles(user,role);
     }
   });
 });
