@@ -13,6 +13,15 @@ Template.calendar.rendered = function(){
       Meteor.call('addCalEvent',ce);
     },
     eventClick:function(calEvent,jsEvent,view){
+      Meteor.setTimeout(function(){
+        if(calEvent.type === 'milestone'){
+          Session.set('eventttype', 'milestone');
+        }else{
+          Session.set('eventttype', 'hoursworked');
+        }
+        $('.taskTitle').val(calEvent.type);
+        $('.name').val(calEvent.title);
+      },750);
       Session.set('editing_calevent',calEvent._id);
     },
     eventDrop:function(reqEvent){
