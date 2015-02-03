@@ -10,5 +10,8 @@ Template.conversationDlg.events({
     Meteor.call('addConversation',conversation);
     Session.set('adding_conversation',false);
 
+  },
+  'click .closeconversation':function(evt,tmpl){
+    Session.set('adding_conversation',false);
   }
 });
