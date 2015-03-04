@@ -1,4 +1,5 @@
 <template name="sidebar">
+  {{#if currentUser}}
   <div class="col-md-2 hidden-xs hidden-sm">
     <ul class="nav nav-sidebar">
       <li><a href="{{pathFor 'dashboard'}}"><i class="fa fa-gear"></i> Dashboard</a></li>
@@ -8,4 +9,5 @@
     </ul>
     {{>chats}}
   </div>
+  {{/if}}
 </template>
