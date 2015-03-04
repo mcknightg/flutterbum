@@ -25,6 +25,7 @@ Router.map(function() {
   this.route('archives', {
     layoutTemplate: 'mainLayout',
     path: '/archives',
+    loginRequired: 'entrySignIn',
     waitOn: function () {
       Meteor.subscribe('archives', Session.get('active_project'));
 
@@ -33,6 +34,7 @@ Router.map(function() {
   this.route('roles', {
     path: '/roles',
     layoutTemplate:'mainLayout',
+    loginRequired: 'entrySignIn',
     waitOn:function(){
       return Meteor.subscribe('directory');
     }
