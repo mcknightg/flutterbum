@@ -1,6 +1,8 @@
 Template.calendar.rendered = function(){
+  $.getScript('/lang/es.js');
   $calendar = $('#projectCalendar');
   var calendar = $calendar.fullCalendar({
+
     dayClick:function(date,allDay,jsEvent,view){
       var ce = {};
       ce.start = date;
@@ -56,7 +58,8 @@ Template.calendar.rendered = function(){
     selectable:true,
     selectHelper:true,
     editable:true,
-    weekMode:'liquid'
+    weekMode:'liquid',
+    lang:'en'
   }).data().fullCalendar;
   Deps.autorun(function(){
     Calevents.find({}).fetch();
