@@ -1,5 +1,4 @@
 Template.calendar.rendered = function(){
-  $.getScript('/lang/es.js');
   $calendar = $('#projectCalendar');
   var calendar = $calendar.fullCalendar({
 
