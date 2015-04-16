@@ -8,8 +8,7 @@
     <div class="panel-body" >
       <div class="notes" style="max-height:400px !important;overflow-y:scroll;">
         {{#each chats}}
-        <small class="text-muted">{{formatdatetime date}}</small> - <small class="text-muted">{{ownerName}}</small><br/>
-        <span>{{note}}</span>  <br/>
+          {{>chat}}
         {{/each}}
       </div>
       <textarea placeholder="Chat with the team"  class="push-down col-md-12 hidden-sm hidden-xs form-group flitEdit"></textarea> <span><a class="clearChat">Clear All</a></span>
@@ -18,4 +17,8 @@
       </button></span>
     </div>
   </div>
+</template>
+<template name="chat">
+  <small class="text-muted">{{formatdatetime date}}</small> - <small class="text-muted">{{ownerName}}</small><br/>
+  <span>{{note}}</span>  <br/>
 </template>
