@@ -54,9 +54,9 @@ Router.map(function() {
       }
     },
     onAfterAction: function() {
-      SEO.set({
-        title: 'Dashboard | ' + SEO.settings.title
-      });
+      // SEO.set({
+      //   title: 'Dashboard | ' + SEO.settings.title
+      // });
     }
   });
   this.route('projectView',{

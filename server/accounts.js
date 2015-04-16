@@ -5,7 +5,7 @@ Meteor.startup(function() {
   });
   Accounts.onCreateUser( function (options, user) {
         if (options.profile) user.profile = options.profile;
-        user.username = options.email;
+        user.name = options.email;
         return user;
     });
 });

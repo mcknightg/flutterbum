@@ -8,9 +8,6 @@ coffeescript
 less
 accounts-ui
 accounts-password
-jquery
-mrt:moment
-mrt:jquery-ui
 alanning:roles
 iron:router
 zimme:iron-router-active
@@ -21,6 +18,8 @@ joshowens:simple-form
 meteorhacks:zones
 dburles:collection-helpers
 reywood:publish-composite
+mrt:moment
+mrt:jquery-ui
 mrt:underscore-string-latest
 matb33:collection-hooks
 fuatsengul:iron-router-auth
@@ -28,5 +27,6 @@ dburles:factory
 anti:fake
 cunneen:mailgun
 cfs:standard-packages
-cfs:filesystem
+jquery
 rzymek:fullcalendar
+cfs:filesystem
