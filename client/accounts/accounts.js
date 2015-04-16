@@ -1,6 +1,6 @@
 Meteor.startup(function() {
   Accounts.ui.config({
-    passwordSignupFields: 'EMAIL_ONLY'
+    // passwordSignupFields: 'EMAIL_ONLY'
   });
 
   AccountsEntry.config({
