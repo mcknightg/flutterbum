@@ -17,9 +17,8 @@ Template.chat.helpers({
   ownerName:function(){
 
     var owner = Meteor.users.findOne({_id:this.owner});
-    console.log(owner);
     if(owner && owner.profile){
-      return owner.profile.name;
+      return owner.profile.firstName + " " + owner.profile.lastName;
     } else{
       return 'unknown';
     }
