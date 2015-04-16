@@ -15,8 +15,15 @@ Template.chats.helpers({
 });
 Template.chat.helpers({
   ownerName:function(){
+
     var owner = Meteor.users.findOne({_id:this.owner});
+    console.log(owner);
+    if(owner && owner.profile){
       return owner.profile.name;
+    } else{
+      return 'unknown';
+    }
+
   }
 });
 Template.chats.rendered = function(){

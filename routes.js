@@ -70,6 +70,7 @@ Router.map(function() {
       Meteor.subscribe('calevents',this.params.id);
       Meteor.subscribe('uploads',this.params.id);
       Meteor.subscribe('directory');
+      Meteor.subscribe('chats');
 
       return Meteor.subscribe('projects');
     },
