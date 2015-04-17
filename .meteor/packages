@@ -28,5 +28,5 @@ anti:fake
 cunneen:mailgun
 cfs:standard-packages
 jquery
-rzymek:fullcalendar
+mrt:fullcalendar
 cfs:filesystem

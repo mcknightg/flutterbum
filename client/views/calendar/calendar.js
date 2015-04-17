@@ -5,7 +5,7 @@ Template.calendar.rendered = function(){
     dayClick:function(date,allDay,jsEvent,view){
       var ce = {};
       ce.start = new Date(date);
-      ce.end = new Date(date);
+      ce.end = ce.start;
       ce.color = 'red';
       ce.className = 'todo';
       ce.project = Session.get('active_project');
@@ -58,8 +58,7 @@ Template.calendar.rendered = function(){
     selectable:true,
     selectHelper:true,
     editable:true,
-    weekMode:'liquid',
-    lang:'de'
+    weekMode:'liquid'
   }).data().fullCalendar;
   Deps.autorun(function(){
     Calevents.find({}).fetch();
